@@ -285,7 +285,7 @@ function Work({ onOpen }) {
       links: [],
       cover: 'kiosk',
       image: '/assets/img/키오스크.webp',
-      gallery: ['/assets/img/키오스크.webp'],
+      gallery: ['/assets/img/키오스크.webp', '/assets/img/송출요청 프로그램.png'],
       highlights: [
         '스티커메이커 · 폴라폴라 · 컬러네임스티커 · 카드메이커 · 스튜디오 5개 제품 유지보수',
         '기존 코드 구조 분석 후 안정성을 유지하며 신규 기능 추가 · 버그 수정',
@@ -570,7 +570,8 @@ function Experience() {
       role: '프론트엔드 개발자', org: '㈜영인터내셔널',
       points: [
         '키오스크 웹앱 유지보수 및 기능 개선',
-        'Payme 결제 모듈 연동 / 프린터 상태 UI 개선',
+        '기존 코드 구조 분석을 바탕으로 사용자 흐름·UI 개선 및 기능 안정성 향상',
+        '거래처 요청서·동영상 통합 관리 웹 시스템 신규 구축',
         '서비스: 스티커메이커 · 폴라폴라 · 컬러네임스티커 · 카드메이커 · 스튜디오',
       ],
       live: true,
