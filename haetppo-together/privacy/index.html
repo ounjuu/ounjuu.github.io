@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>같이햇뽀 - 개인정보처리방침</title>
+  <style>
+    @font-face {
+      font-family: "DungGeunMo";
+      src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2206-02@1.0/DungGeunMo.woff") format("woff");
+      font-weight: normal;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    * { box-sizing: border-box; }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "DungGeunMo", "Galmuri11", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:
+        linear-gradient(180deg, #cdefff 0%, #fff7c4 100%);
+      background-attachment: fixed;
+      color: #2d3a5f;
+      line-height: 1.85;
+      min-height: 100vh;
+      padding: 32px 16px 64px;
+      image-rendering: pixelated;
+    }
+
+    body::before, body::after {
+      content: "";
+      position: fixed;
+      width: 48px;
+      height: 24px;
+      background:
+        radial-gradient(circle at 25% 70%, #fff 6px, transparent 7px),
+        radial-gradient(circle at 60% 50%, #fff 8px, transparent 9px),
+        radial-gradient(circle at 85% 75%, #fff 5px, transparent 6px);
+      pointer-events: none;
+      opacity: 0.85;
+    }
+    body::before { top: 40px; left: 8%; }
+    body::after  { top: 120px; right: 6%; transform: scale(0.8); }
+
+    .card {
+      max-width: 680px;
+      margin: 0 auto;
+      background: #ffffff;
+      border: 4px solid #2d3a5f;
+      box-shadow: 8px 8px 0 #ffd84a, 8px 8px 0 4px #2d3a5f;
+      padding: 28px 22px 36px;
+      position: relative;
+    }
+
+    .card::before {
+      content: "";
+      display: block;
+      height: 12px;
+      background:
+        repeating-linear-gradient(90deg, #ffd84a 0 12px, #ffb83a 12px 24px);
+      border: 3px solid #2d3a5f;
+      margin: -28px -22px 18px;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 22px;
+      color: #2d3a5f;
+      background: #ffd84a;
+      border: 3px solid #2d3a5f;
+      padding: 10px 12px;
+      margin: 8px auto 6px;
+      box-shadow: 4px 4px 0 #69c1ff;
+      letter-spacing: 1px;
+    }
+
+    .effective {
+      text-align: center;
+      color: #2d3a5f;
+      font-size: 13px;
+      margin: 0 0 22px;
+      background: #e9f6ff;
+      display: inline-block;
+      padding: 4px 10px;
+      border: 2px solid #2d3a5f;
+      box-shadow: 3px 3px 0 #ffd84a;
+    }
+
+    .effective-wrap { text-align: center; margin-bottom: 28px; }
+
+    .intro {
+      background: #f4faff;
+      border: 2px dashed #69c1ff;
+      padding: 12px 14px;
+      font-size: 13px;
+      color: #2d3a5f;
+      margin-bottom: 24px;
+    }
+
+    h2 {
+      color: #2d3a5f;
+      margin: 30px 0 10px;
+      font-size: 15px;
+      background: #cdefff;
+      border: 2px solid #2d3a5f;
+      padding: 6px 10px;
+      box-shadow: 3px 3px 0 #ffd84a;
+      display: inline-block;
+    }
+
+    h3 {
+      color: #2d3a5f;
+      font-size: 14px;
+      margin: 18px 0 6px;
+      padding-left: 6px;
+      border-left: 4px solid #ffd84a;
+    }
+
+    p, li {
+      font-size: 14px;
+      color: #2d3a5f;
+    }
+
+    p { margin: 8px 0; }
+
+    ul {
+      padding-left: 20px;
+      list-style: none;
+    }
+    ul li {
+      position: relative;
+      padding-left: 18px;
+      margin-bottom: 6px;
+    }
+    ul li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 9px;
+      width: 8px;
+      height: 8px;
+      background: #ffd84a;
+      border: 2px solid #2d3a5f;
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+      margin-top: 12px;
+      border: 2px solid #2d3a5f;
+      box-shadow: 4px 4px 0 #ffd84a;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+      background: #fff;
+    }
+    th, td {
+      border: 1px solid #2d3a5f;
+      padding: 8px 10px;
+      text-align: left;
+      vertical-align: top;
+    }
+    th {
+      background: #cdefff;
+      color: #2d3a5f;
+    }
+
+    .note {
+      background: #fff7c4;
+      border: 2px dashed #ffb83a;
+      padding: 10px 12px;
+      font-size: 13px;
+      color: #4a3f10;
+      margin: 12px 0;
+    }
+
+    a {
+      color: #1a73c7;
+      text-decoration: none;
+      border-bottom: 2px dotted #1a73c7;
+    }
+
+    .footer {
+      text-align: center;
+      margin-top: 40px;
+      padding-top: 18px;
+      border-top: 2px dashed #69c1ff;
+      color: #5b7aa8;
+      font-size: 12px;
+    }
+
+    @media (max-width: 480px) {
+      body { padding: 20px 10px 40px; }
+      .card { padding: 22px 16px 28px; }
+      .card::before { margin: -22px -16px 14px; }
+      h1 { font-size: 18px; }
+      h2 { font-size: 14px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>☀ 개인정보처리방침 ☁</h1>
+    <div class="effective-wrap">
+      <span class="effective">시행일자 · 2026-05-12</span>
+    </div>
+
+    <div class="intro">
+      「같이햇뽀 (haetppo-together)」(이하 "본 앱")는 사용자의 개인정보를 소중히 다루며, 대한민국 개인정보보호법(PIPA), 정보통신망법, Apple App Store 가이드라인, Google Play Console 데이터 안전 정책을 준수합니다.
+    </div>
+
+    <h2>1. 수집하는 개인정보 항목</h2>
+
+    <h3>가. 회원가입 시 필수</h3>
+    <ul>
+      <li>닉네임 (2~12자, 사용자 직접 입력)</li>
+      <li>PIN 6자리 (Firebase Authentication이 단방향 해시(bcrypt)로만 저장하며, 평문은 어디에도 보관되지 않습니다)</li>
+    </ul>
+    <div class="note">
+      ※ 닉네임은 SHA-1 해시 처리 후 RFC 2606 표준의 외부 도달 불가 도메인(<code>@id.invalid</code>) 형식 가짜 이메일로 변환되어 Firebase Auth 식별자에만 사용됩니다. 실제 이메일 주소가 아니며, 외부로 발송·노출되지 않습니다.
+    </div>
+
+    <h3>나. 서비스 이용 중 자동 생성</h3>
+    <ul>
+      <li>가입 일시, 가입된 그룹(방) ID 목록</li>
+      <li>방 정보: 방 이름, 부제, 시작일, 카테고리, 초대 코드</li>
+      <li>멤버 정보: 닉네임, 선택한 캐릭터, 레벨, 가입 일시, 매일 반복 항목</li>
+      <li>일일 인증 체크리스트: 항목 텍스트, 체크 상태, 첨부 사진 URL</li>
+    </ul>
+
+    <h3>다. 자동 수집되는 정보</h3>
+    <ul>
+      <li>광고 식별자 (Android AAID / iOS IDFA) — Google AdMob 광고 송출용</li>
+      <li>기기 및 OS 정보, 앱 버전 — 광고 노출 최적화 및 충돌 디버깅용</li>
+      <li>접속 로그 — Firebase Authentication 인증 시각</li>
+    </ul>
+
+    <h3>라. 기기 내에만 저장 (서버 전송 없음)</h3>
+    <ul>
+      <li>알림 ON/OFF 설정</li>
+      <li>앱 잠금 PIN 4자리 (회원가입 PIN과 별개, 기기 내부에만 저장)</li>
+      <li>생체 인증(Face ID / 지문) 사용 여부</li>
+    </ul>
+
+    <h2>2. 수집 및 이용 목적</h2>
+    <ul>
+      <li>회원 식별 및 로그인</li>
+      <li>그룹 챌린지 / 디데이 인증 서비스 제공</li>
+      <li>마일스톤 보상 지급</li>
+      <li>광고 노출 (앱 수익 모델)</li>
+      <li>부정 이용 및 이상 활동 대응</li>
+    </ul>
+
+    <h2>3. 보유 및 이용 기간</h2>
+    <ul>
+      <li>회원 정보: 회원 탈퇴 시까지 (앱 설정 → "계정 삭제" 메뉴로 즉시 삭제 가능)</li>
+      <li>그룹 및 인증 기록: 본인이 마지막 멤버로 방을 나갈 때까지 보관, 마지막 멤버 탈퇴 시 일괄 삭제</li>
+      <li>인증 사진(Cloudinary): 사용자가 항목을 삭제해도 호스팅 특성상 즉시 자동 삭제가 어려울 수 있으며, 본 앱은 주기적으로 미참조(orphan) 파일을 일괄 정리합니다(9항 참조).</li>
+      <li>광고 식별자: Google AdMob 정책에 따라 처리됩니다(일반적으로 13~18개월).</li>
+    </ul>
+
+    <h2>4. 개인정보의 제3자 제공</h2>
+    <p>본 앱은 사용자의 개인정보를 제3자에게 판매하거나 제공하지 않습니다. 다만 아래 5항과 같이 서비스 제공에 필요한 범위에서 처리 위탁이 이루어집니다.</p>
+
+    <h2>5. 개인정보 처리 위탁</h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>수탁자</th>
+            <th>위탁 업무</th>
+            <th>처리 정보</th>
+            <th>저장 위치</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Google LLC<br>(Firebase Auth / Firestore)</td>
+            <td>회원 인증, 데이터 저장</td>
+            <td>닉네임 해시, 그룹·체크리스트 데이터</td>
+            <td>asia-northeast3 (서울 리전)</td>
+          </tr>
+          <tr>
+            <td>Cloudinary, Inc.</td>
+            <td>인증 사진 호스팅</td>
+            <td>사용자가 업로드한 인증 사진 파일</td>
+            <td>미국 / 유럽 리전</td>
+          </tr>
+          <tr>
+            <td>Google LLC (AdMob)</td>
+            <td>광고 노출</td>
+            <td>광고 식별자, 기기 정보</td>
+            <td>Google 글로벌</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>6. 개인정보의 국외 이전</h2>
+    <p>본 앱은 서비스 제공을 위해 아래와 같이 개인정보를 국외로 이전합니다. 모든 통신은 HTTPS로 암호화됩니다.</p>
+    <ul>
+      <li>이전 대상국: 미국, 유럽연합(EU) (수탁자별 데이터센터 위치에 따름)</li>
+      <li>이전 받는 자: Google LLC, Cloudinary, Inc.</li>
+      <li>이전 항목: 위 5항 표에 기재된 정보</li>
+      <li>이전 목적: 본 방침 2항에 명시된 서비스 제공</li>
+      <li>이전 시기: 회원가입 및 서비스 이용 시점에 수시 전송</li>
+      <li>보유 기간: 위 3항에 기재된 기간</li>
+    </ul>
+    <p>사용자는 본 방침 7항의 문의처를 통해 국외 이전 거부 의사를 표시할 수 있습니다(이 경우 본 앱의 핵심 기능 이용이 제한됩니다).</p>
+
+    <h2>7. 정보주체의 권리 및 행사 방법</h2>
+    <ul>
+      <li>열람: 앱 내 방, 체크리스트, 보상함 화면에서 본인이 저장한 정보를 직접 확인할 수 있습니다.</li>
+      <li>수정: 닉네임은 인증 키로 사용되므로 변경이 불가능합니다. 방 이름, 캐릭터, 체크리스트 항목 등은 앱 내에서 자유롭게 수정할 수 있습니다.</li>
+      <li>삭제: 앱 설정 → "계정 삭제"를 통해 회원 정보, 참여한 방, 체크리스트, 사진 메타데이터를 즉시 일괄 삭제할 수 있습니다.</li>
+      <li>처리 정지: 앱 내 로그아웃을 통해 즉시 처리 정지가 가능합니다.</li>
+      <li>본 권리는 본 방침 8항의 문의처를 통해서도 행사할 수 있습니다.</li>
+    </ul>
+
+    <h2>8. 개인정보 보호책임자</h2>
+    <ul>
+      <li>개인정보 보호책임자: 김은주 (운영자 본인)</li>
+      <li>이메일: <a href="mailto:lunafortune.help@gmail.com">lunafortune.help@gmail.com</a></li>
+      <li>서비스명: 같이햇뽀 (haetppo-together)</li>
+    </ul>
+
+    <h2>9. 안전성 확보 조치</h2>
+    <ul>
+      <li>PIN은 Firebase Authentication이 단방향 해시(bcrypt)로만 저장하며, 운영자도 평문을 알 수 없습니다.</li>
+      <li>닉네임은 SHA-1 해시 후 외부 도달 불가 도메인(@id.invalid) 가짜 이메일로 변환되어 인증에만 사용됩니다.</li>
+      <li>Firestore 보안 규칙을 적용하여 본인이 속한 그룹 외 데이터에는 접근이 차단됩니다.</li>
+      <li>Firebase, Cloudinary 등 모든 외부 통신은 HTTPS로 암호화됩니다.</li>
+      <li>인증 사진은 본인만 업로드할 수 있도록 권한이 제한됩니다.</li>
+    </ul>
+
+    <h2>10. 자동 수집 도구 거부 방법</h2>
+    <p>광고 식별자는 기기 설정에서 재설정하거나 추적을 거부할 수 있습니다.</p>
+    <ul>
+      <li>Android: 설정 → Google → 광고 → "광고 ID 삭제"</li>
+      <li>iOS: 설정 → 개인정보 보호 및 보안 → 추적 → "앱이 추적 요청하도록 허용" OFF</li>
+    </ul>
+    <p>또한 광고 ID는 Google에 의해 수집되며, Google의 광고 정책에 따라 처리됩니다.</p>
+
+    <h2>11. 개인정보 파기 절차 및 방법</h2>
+    <ul>
+      <li>사용자가 앱 내 "계정 삭제"를 실행하면 Firebase Authentication 계정과 Firestore 데이터가 즉시 삭제됩니다.</li>
+      <li>Cloudinary에 업로드된 인증 사진은 호스팅 특성상 자동 삭제가 어려울 수 있으며, 본 앱은 주기적으로 미참조(orphan) 사진을 일괄 정리합니다.</li>
+      <li>전자적 파일은 복구가 불가능한 방식으로 영구 삭제합니다.</li>
+    </ul>
+
+    <h2>12. 만 14세 미만 아동의 개인정보</h2>
+    <p>본 앱은 한국 법령에 따라 만 14세 미만 아동의 가입 및 이용을 허용하지 않습니다. 가입 시 만 14세 이상임을 전제로 하며, 만 14세 미만으로 확인되는 경우 즉시 계정이 삭제됩니다.</p>
+
+    <h2>13. 개인정보처리방침의 변경</h2>
+    <ul>
+      <li>본 방침이 변경되는 경우, 시행일 최소 7일 전 앱 내 공지를 통해 안내합니다.</li>
+      <li>이용자 권리에 중대한 영향을 미치는 변경의 경우 시행일 최소 30일 전에 사전 고지합니다.</li>
+    </ul>
+
+    <h2>14. 시행일</h2>
+    <ul>
+      <li>최초 작성일: 2026-05-12</li>
+      <li>시행일: 2026-05-12</li>
+    </ul>
+
+    <div class="footer">
+      ☀ 같이햇뽀 · haetppo-together ☁<br>
+      시행일자 2026-05-12
+    </div>
+  </div>
+</body>
+</html>
