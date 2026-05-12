@@ -23,6 +23,7 @@
 </head>
 <body>
   <h1>개인정보처리방침</h1>
+  <p class="effective">최종 업데이트: 2026-05-02</p>
 
   <p>「미래에서 온 일기 (Letters from Future Me)」(이하 "본 앱")는 사용자의 개인정보를 소중히 다루며, 대한민국 개인정보보호법(PIPA), Apple App Store 가이드라인, Google Play Console 데이터 안전 정책을 준수합니다. 본 방침은 사용자가 어떤 정보를 어떻게 처리되는지 명확히 안내하기 위해 마련되었습니다.</p>
 
@@ -47,7 +48,7 @@
     <li>사용자가 선택한 미래 자아의 시점 (1년·5년·10년·임종 직전)</li>
     <li>익명 디바이스 식별 ID (남용 방지 rate limit 용)</li>
   </ul>
-  <p>전송 경로: 사용자 기기 → Cloudflare Workers 프록시 → Google Gemini API (또는 폴백 시 Groq API)</p>
+  <p>전송 경로: 사용자 기기 → Cloudflare Workers 프록시 → Google Gemini API (또는 폴백 시 Groq API, Cloudflare Workers AI)</p>
 
   <h3>C. 광고 관련 정보 (Google AdMob)</h3>
   <ul>
@@ -82,7 +83,7 @@
     </thead>
     <tbody>
       <tr><td>Google LLC</td><td>Gemini AI 편지 생성 / AdMob 광고 송출</td><td>미국</td></tr>
-      <tr><td>Cloudflare, Inc.</td><td>Workers 프록시 / KV(rate-limit 카운터)</td><td>미국</td></tr>
+      <tr><td>Cloudflare, Inc.</td><td>Workers 프록시 / KV(rate-limit 카운터) / Workers AI 편지 생성 (Gemini·Groq 폴백 시)</td><td>미국</td></tr>
       <tr><td>Groq, Inc.</td><td>Llama 모델 편지 생성 (Gemini 폴백 시)</td><td>미국</td></tr>
     </tbody>
   </table>
@@ -104,22 +105,21 @@
   </ul>
 
   <h2>7. 어린이 보호</h2>
-  <p>본 앱은 만 13세 이상 사용자를 대상으로 합니다. 어린이 대상 서비스(Designed for Families · DAU 어린이용)가 아니며 만 13세 미만 사용자에게는 권장되지 않습니다. 만 13세 미만 사용자의 데이터를 본 앱이 인지한 경우 즉시 삭제하며, 보호자는 위 문의처로 삭제를 요청할 수 있습니다.</p>
+  <p>본 앱은 만 14세 이상 사용자를 대상으로 합니다. 어린이 대상 서비스(Designed for Families · DAU 어린이용)가 아니며 만 14세 미만 사용자에게는 권장되지 않습니다. 만 14세 미만 사용자의 데이터를 본 앱이 인지한 경우 즉시 삭제하며, 보호자는 위 문의처로 삭제를 요청할 수 있습니다.</p>
 
   <h2>8. 국외 이전</h2>
-  <p>편지 생성을 위한 정보(1항 B)는 대한민국 외 미국에 위치한 Google LLC, Cloudflare, Inc., Groq, Inc. 데이터센터에서 처리됩니다. 모든 통신은 HTTPS로 암호화되며, 응답 수신 즉시 메모리에서 폐기되어 외부 서버에 영구 저장되지 않습니다.</p>
+  <p>편지 생성을 위한 정보(1항 B)는 대한민국 외 미국에 위치한 Google LLC, Cloudflare, Inc.(Workers AI 포함), Groq, Inc. 데이터센터에서 처리됩니다. 모든 통신은 HTTPS로 암호화되며, 응답 수신 즉시 메모리에서 폐기되어 외부 서버에 영구 저장되지 않습니다.</p>
   <p>이전되는 정보 항목, 이전 목적, 보유·이용 기간은 본 방침 1항 B, 2항, 3항에 명시된 바와 같으며, 사용자는 본 방침 10항의 문의처를 통해 국외 이전 거부 의사를 표시할 수 있습니다(이 경우 AI 편지 생성 기능 이용이 제한됩니다).</p>
 
   <h2>9. 변경 사항 안내</h2>
   <p>본 방침이 변경되는 경우 앱 업데이트 또는 본 페이지를 통해 변경 내용과 시행일을 사전 안내합니다. 사용자에게 중대한 영향을 미치는 변경 시에는 앱 내 알림으로 별도 고지합니다.</p>
 
   <h2>10. 문의처</h2>
-  <p>개인정보 관련 문의 및 권리 행사 요청은 아래로 연락주시기 바랍니다.<br><br>
-  이메일: <a href="mailto:lunafortune.help@gmail.com">lunafortune.help@gmail.com</a></p>
-
-  <div class="footer">
-    <p>서비스명: 미래에서 온 일기 (Letters from Future Me)<br>
-    Bundle ID: com.ounjuu.futurediary</p>
-  </div>
+  <p>개인정보 관련 문의 및 권리 행사 요청은 아래로 연락주시기 바랍니다.</p>
+  <ul>
+    <li>개인정보 보호책임자: 김은주 (운영자 본인)</li>
+    <li>이메일: <a href="mailto:lunafortune.help@gmail.com">lunafortune.help@gmail.com</a></li>
+    <li>서비스명: 미래에서 온 일기 (Letters from Future Me)</li>
+  </ul>
 </body>
 </html>
