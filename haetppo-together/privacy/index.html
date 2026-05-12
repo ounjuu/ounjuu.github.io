@@ -67,6 +67,21 @@
       margin: -28px -22px 18px;
     }
 
+    .mascot {
+      text-align: center;
+      margin: 8px auto 14px;
+    }
+    .mascot img {
+      width: 128px;
+      height: 128px;
+      image-rendering: pixelated;
+      image-rendering: -moz-crisp-edges;
+      border: 3px solid #2d3a5f;
+      background: #fff7c4;
+      box-shadow: 5px 5px 0 #69c1ff;
+      padding: 6px;
+    }
+
     h1 {
       text-align: center;
       font-size: 22px;
@@ -206,6 +221,9 @@
 </head>
 <body>
   <div class="card">
+    <div class="mascot">
+      <img src="../assets/character.png" alt="같이햇뽀 마스코트 캐릭터" width="128" height="128">
+    </div>
     <h1>☀ 개인정보처리방침 ☁</h1>
     <div class="effective-wrap">
       <span class="effective">시행일자 · 2026-05-12</span>
@@ -261,7 +279,7 @@
     <ul>
       <li>회원 정보: 회원 탈퇴 시까지 (앱 설정 → "계정 삭제" 메뉴로 즉시 삭제 가능)</li>
       <li>그룹 및 인증 기록: 본인이 마지막 멤버로 방을 나갈 때까지 보관, 마지막 멤버 탈퇴 시 일괄 삭제</li>
-      <li>인증 사진(Cloudinary): 사용자가 항목을 삭제해도 호스팅 특성상 즉시 자동 삭제가 어려울 수 있으며, 본 앱은 주기적으로 미참조(orphan) 파일을 일괄 정리합니다(9항 참조).</li>
+      <li>인증 사진(Cloudinary): 본 앱은 unsigned 업로드 방식을 사용하므로 사용자가 체크리스트 항목을 삭제해도 Cloudinary 원본 파일은 앱에서 즉시 자동 삭제되지 않습니다. 미참조(orphan) 사진은 Cloudinary 무료 호스팅 한도(25GB) 내에서 운영자가 Cloudinary 대시보드를 통해 주기적으로 수동 정리합니다.</li>
       <li>광고 식별자: Google AdMob 정책에 따라 처리됩니다(일반적으로 13~18개월).</li>
     </ul>
 
@@ -350,7 +368,7 @@
     <h2>11. 개인정보 파기 절차 및 방법</h2>
     <ul>
       <li>사용자가 앱 내 "계정 삭제"를 실행하면 Firebase Authentication 계정과 Firestore 데이터가 즉시 삭제됩니다.</li>
-      <li>Cloudinary에 업로드된 인증 사진은 호스팅 특성상 자동 삭제가 어려울 수 있으며, 본 앱은 주기적으로 미참조(orphan) 사진을 일괄 정리합니다.</li>
+      <li>Cloudinary에 업로드된 인증 사진은 unsigned 업로드 특성상 앱에서 즉시 자동 삭제되지 않으며, 운영자가 Cloudinary 대시보드를 통해 무료 호스팅 한도(25GB) 내에서 수동으로 정리합니다.</li>
       <li>전자적 파일은 복구가 불가능한 방식으로 영구 삭제합니다.</li>
     </ul>
 
