@@ -25,8 +25,8 @@
           kor: ['"Pretendard Variable"', 'Pretendard', '"Apple SD Gothic Neo"', '-apple-system', 'sans-serif'],
         },
         colors: {
-          paper: '#FAF8F5',
-          paper2: '#F2EEE8',
+          paper: '#FCF8EF',
+          paper2: '#F4EEE2',
           ink: '#1A1A1A',
           ink2: '#4A4A4A',
           mute: '#8A8580',
@@ -41,7 +41,7 @@
 <style>
   html { scroll-behavior: smooth; }
   body {
-    background: #FAF8F5;
+    background: #FCF8EF;
     color: #1A1A1A;
     font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "Pretendard Variable", Pretendard, "Apple SD Gothic Neo", system-ui, sans-serif;
     -webkit-font-smoothing: antialiased;
@@ -99,24 +99,21 @@
   }
 
   nav.scrolled {
-    background: rgba(250, 248, 245, 0.85);
+    background: rgba(252, 248, 239, 0.85);
     backdrop-filter: blur(14px);
     -webkit-backdrop-filter: blur(14px);
     border-bottom: 1px solid #E5E1DA;
   }
 
   .skill-row { transition: background 0.3s ease; }
-  .skill-row:hover { background: #F2EEE8; }
+  .skill-row:hover { background: #F4EEE2; }
   .skill-row:hover .skill-arrow { transform: translateX(4px); opacity: 1; }
   .skill-arrow { transition: all 0.3s ease; opacity: 0; }
 
-  .exp-row { transition: padding 0.4s ease; }
-  .exp-row:hover { padding-left: 12px; }
-
-  .cover-luna { background: linear-gradient(180deg, #1A1530 0%, #2D2356 100%); color: #FAF8F5; }
-  .cover-receipt { background: #F2EEE8; color: #1A1A1A; }
+  .cover-luna { background: linear-gradient(180deg, #1A1530 0%, #2D2356 100%); color: #FCF8EF; }
+  .cover-receipt { background: #F4EEE2; color: #1A1A1A; }
   .cover-coco { background: linear-gradient(135deg, #EDE9FB 0%, #E5DFFA 100%); color: #1A1A1A; }
-  .cover-pet { background: #1A1A1A; color: #FAF8F5; }
+  .cover-pet { background: #1A1A1A; color: #FCF8EF; }
 
   .display-h {
     font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Pretendard Variable", Pretendard, sans-serif;
@@ -128,8 +125,8 @@
   .letter { padding-top: 0.05em; }
 
   .btn-quiet { border: 1px solid #1A1A1A; transition: all 0.3s ease; }
-  .btn-quiet:hover { background: #1A1A1A; color: #FAF8F5; }
-  .btn-accent { background: #1A1A1A; color: #FAF8F5; transition: all 0.3s ease; }
+  .btn-quiet:hover { background: #1A1A1A; color: #FCF8EF; }
+  .btn-accent { background: #1A1A1A; color: #FCF8EF; transition: all 0.3s ease; }
   .btn-accent:hover { background: #6B4FE8; }
 
   .tag {
@@ -143,12 +140,37 @@
   }
 
   ::-webkit-scrollbar { width: 10px; }
-  ::-webkit-scrollbar-track { background: #FAF8F5; }
-  ::-webkit-scrollbar-thumb { background: #D8D3CB; border-radius: 999px; border: 2px solid #FAF8F5; }
-  ::-webkit-scrollbar-thumb:hover { background: #B8B3AB; }
+  ::-webkit-scrollbar-track { background: #FCF8EF; }
+  ::-webkit-scrollbar-thumb { background: #E2D7BB; border-radius: 999px; border: 2px solid #FCF8EF; }
+  ::-webkit-scrollbar-thumb:hover { background: #C0B498; }
 
   .letter { display: inline-block; opacity: 0; transform: translateY(16px); animation: letterIn 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards; }
   @keyframes letterIn { to { opacity: 1; transform: translateY(0); } }
+
+  @keyframes modalBgIn { from { opacity: 0; } to { opacity: 1; } }
+  @keyframes modalBgOut { from { opacity: 1; } to { opacity: 0; } }
+  @keyframes modalContentIn {
+    from { opacity: 0; transform: scale(0.96) translateY(20px); }
+    to { opacity: 1; transform: scale(1) translateY(0); }
+  }
+  @keyframes modalContentOut {
+    from { opacity: 1; transform: scale(1) translateY(0); }
+    to { opacity: 0; transform: scale(0.97) translateY(8px); }
+  }
+  .modal-bg-in { animation: modalBgIn 0.3s ease-out both; }
+  .modal-bg-out { animation: modalBgOut 0.25s ease-in forwards; }
+  .modal-content-in { animation: modalContentIn 0.42s cubic-bezier(0.22, 1, 0.36, 1) both; }
+  .modal-content-out { animation: modalContentOut 0.25s cubic-bezier(0.4, 0, 1, 1) forwards; }
+
+  @media (max-width: 768px) {
+    html {
+      scroll-snap-type: y mandatory;
+    }
+    section {
+      scroll-snap-align: start;
+      scroll-snap-stop: always;
+    }
+  }
 
   @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after {

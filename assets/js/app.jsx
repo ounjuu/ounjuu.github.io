@@ -596,6 +596,8 @@ function Experience() {
     },
   ];
 
+  const [activeIdx, setActiveIdx] = useState(0);
+
   return (
     <section id="experience" data-screen-label="05 Experience" className="py-32 md:py-44 px-8 border-t border-line">
       <div className="max-w-[1280px] mx-auto grid md:grid-cols-12 gap-12">
@@ -609,7 +611,15 @@ function Experience() {
 
           <div>
             {items.map((it, i) => (
-              <ExpItem key={i} it={it} idx={i} last={i === items.length - 1} />
+              <ExpItem
+                key={i}
+                it={it}
+                idx={i}
+                last={i === items.length - 1}
+                open={activeIdx === i}
+                onHover={() => setActiveIdx(i)}
+                onToggle={() => setActiveIdx(activeIdx === i ? null : i)}
+              />
             ))}
           </div>
         </div>
@@ -618,11 +628,11 @@ function Experience() {
   );
 }
 
-function ExpItem({ it, idx, last }) {
-  const [open, setOpen] = useState(idx === 0);
+function ExpItem({ it, last, open, onHover, onToggle }) {
   return (
     <div className={`reveal exp-row border-t border-ink py-7 md:py-9 ${last ? 'border-b' : ''} cursor-pointer group`}
-         onClick={() => setOpen(!open)}>
+         onMouseEnter={onHover}
+         onClick={onToggle}>
       <div className="grid md:grid-cols-12 gap-4 md:gap-8 items-start">
         <div className="md:col-span-2 font-mono text-mute text-sm">{it.year}</div>
         <div className="md:col-span-7">
@@ -917,8 +927,25 @@ function Footer() {
 
 // ─── Modal ───────────────────────────────────────────────────────────────────
 function ProjectModal({ project, onClose }) {
+  const [displayed, setDisplayed] = useState(null);
+  const [closing, setClosing] = useState(false);
+
   useEffect(() => {
-    if (!project) return;
+    if (project) {
+      setDisplayed(project);
+      setClosing(false);
+    } else if (displayed) {
+      setClosing(true);
+      const t = setTimeout(() => {
+        setDisplayed(null);
+        setClosing(false);
+      }, 260);
+      return () => clearTimeout(t);
+    }
+  }, [project, displayed]);
+
+  useEffect(() => {
+    if (!displayed) return;
     const onKey = (e) => { if (e.key === 'Escape') onClose(); };
     document.addEventListener('keydown', onKey);
     const prevOverflow = document.body.style.overflow;
@@ -927,23 +954,27 @@ function ProjectModal({ project, onClose }) {
       document.removeEventListener('keydown', onKey);
       document.body.style.overflow = prevOverflow;
     };
-  }, [project, onClose]);
+  }, [displayed, onClose]);
 
-  if (!project) return null;
-  const p = project;
+  if (!displayed) return null;
+  const p = displayed;
   const heading = p.title || p.label;
   const sub = p.en || p.kind;
 
   return (
     <div className="fixed inset-0 z-[100] flex items-center justify-center p-0 md:p-6" onClick={onClose} role="dialog" aria-modal="true">
-      <div className="absolute inset-0 bg-ink/60" style={{ backdropFilter: 'blur(4px)', WebkitBackdropFilter: 'blur(4px)' }}></div>
-      <div className="relative w-full h-full md:h-auto md:max-h-[90vh] md:max-w-5xl bg-paper md:rounded-sm shadow-2xl flex flex-col" onClick={(e) => e.stopPropagation()}>
+      <div className={`absolute inset-0 bg-ink/60 ${closing ? 'modal-bg-out' : 'modal-bg-in'}`} style={{ backdropFilter: 'blur(4px)', WebkitBackdropFilter: 'blur(4px)' }}></div>
+      <div className={`relative w-full h-full md:h-auto md:max-h-[90vh] md:max-w-5xl bg-paper md:rounded-sm shadow-2xl flex flex-col ${closing ? 'modal-content-out' : 'modal-content-in'}`} onClick={(e) => e.stopPropagation()}>
         {/* Header */}
         <div className="bg-paper border-b border-line px-6 md:px-10 py-5 flex items-start justify-between gap-6 shrink-0">
           <div className="min-w-0">
             <div className="num-label mb-1.5 truncate">{p.kind}</div>
             <h2 className="font-serif kor-serif text-xl md:text-2xl text-ink tracking-tight">
-              {heading}
+              {heading.split('').map((c, i) => (
+                <span key={i} className="letter" style={{ animationDelay: `${0.15 + i * 0.05}s` }}>
+                  {c === ' ' ? ' ' : c}
+                </span>
+              ))}
               {p.en && <span className="serif-italic text-mute font-normal text-base ml-2">{p.en}</span>}
             </h2>
           </div>
