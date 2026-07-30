@@ -119,14 +119,14 @@ function Hero() {
           </div>
           <div className="md:col-span-4 md:col-start-9">
             <div className="reveal text-sm text-ink2 leading-relaxed kor max-w-sm" style={{ transitionDelay: '0.5s' }}>
-              Claude Code · Cursor 같은 AI 도구로 빠르게 만들고, 실서비스 운영 경험을 바탕으로 작은 디테일까지 꾸준히 다듬어 갑니다.
+              Claude Code · Codex 같은 AI 도구로 빠르게 만들고, 실서비스 운영 경험을 바탕으로 작은 디테일까지 꾸준히 다듬어 갑니다.
             </div>
           </div>
         </div>
 
         <div className="reveal mt-24 pt-8 border-t border-line flex flex-col md:flex-row items-start md:items-end justify-between gap-6" style={{ transitionDelay: '0.7s' }}>
           <div className="flex items-baseline gap-12">
-            <Stat n="05" label="Selected Works" />
+            <Stat n="06" label="Selected Works" />
             <Stat n="01" label="App Released" />
             <Stat n="02" label="Awards" />
           </div>
@@ -168,8 +168,8 @@ function About() {
               풀스택 기반을 다졌고, 현재는 ㈜영인터내셔널에서 React · Next.js 기반 키오스크 웹앱을 유지보수하고 있습니다.
             </p>
             <p>
-              직관적이고 효율적인 UI/UX 구현을 추구하며, <span className="text-ink">Claude Code · Cursor</span> 같은 AI 도구로 더 빠른 문제 해결을 시도합니다.
-              1인 모바일 앱 <span className="text-ink">‘루나운세’</span>를 Google Play에 출시했고, OCR 전표 자동화 사이트 ReceiptFlow를 개발 중입니다.
+              직관적이고 효율적인 UI/UX 구현을 추구하며, <span className="text-ink">Claude Code · Codex</span> 같은 AI 도구를 설계 · 코드 구조 개선 · 로직 최적화에 적극 활용해 생산성을 높입니다.
+              반복되던 사무 업무를 자동화하는 데 관심이 많아, 사내 업무 도구부터 OCR 전표 자동화 사이트 <span className="text-ink">ReceiptFlow</span>, 1인 모바일 앱 <span className="text-ink">‘루나운세’</span>까지 직접 만들며 운영합니다.
             </p>
           </div>
 
@@ -201,7 +201,7 @@ function Skills() {
     { label: 'Frontend', items: ['React', 'Next.js', 'TypeScript', 'JavaScript', 'Vue.js', 'React Native', 'HTML5 & CSS3', 'Tailwind', 'antd', 'Bootstrap'] },
     { label: 'State & Data', items: ['Redux', 'Zustand', 'React Query', 'Context API', 'REST API'] },
     { label: 'Backend & Infra', items: ['Node.js', 'Nest.js', 'MySQL', 'AWS EC2', 'Supabase'] },
-    { label: 'Tools & AI', items: ['Git & GitHub', 'Claude Code', 'Cursor', 'Figma', 'Notion', 'Slack'] },
+    { label: 'Tools & AI', items: ['Git & GitHub', 'Claude Code', 'Codex', 'Figma', 'Notion', 'Slack'] },
   ];
   return (
     <section id="skills" data-screen-label="03 Skills" className="py-32 md:py-44 px-8 border-t border-line">
@@ -241,7 +241,29 @@ function Skills() {
 function Work({ onOpen }) {
   const projects = [
     {
-      n: '01', year: '2026',
+      n: '01', year: '2025—',
+      title: '사내 업무 자동화 툴', en: 'Internal Tools',
+      kind: '회사 · 영인터내셔널 · AI 페어 코딩',
+      live: true,
+      desc: '반복되던 사내 사무 업무를 직접 만든 웹 도구로 줄였습니다. 엑셀로 관리하던 거래처 요청서·동영상 프로세스를 통합 웹 시스템으로 옮기고, 키오스크 앱 로그를 브라우저에서 바로 분석하는 도구를 만들었습니다. Claude를 페어로 활용해 설계와 구현 속도를 끌어올렸습니다.',
+      stack: ['React', 'TypeScript', 'Vite', 'Supabase', 'Claude'],
+      links: [],
+      cover: 'tools',
+      highlights: [
+        '엑셀로 관리하던 거래처 요청서·동영상 프로세스를 통합 웹 시스템으로 전환',
+        '입력 양식 표준화 · 캘린더 기반 일정 관리 · 검토/승인 워크플로우 구현',
+        '키오스크 앱 로그(.log)를 규칙 기반으로 분석해 결제·에러·미출력을 브라우저에서 즉시 파악',
+        'Claude 페어 코딩으로 설계·개발을 반복하며 업무 처리 효율과 협업 편의성 향상',
+      ],
+      features: [
+        { title: 'DID 편성표 관리 (Daiso)', desc: '거래처 송출 요청 → 관리자 검토·승인 → 편성표 반영까지 웹에서 통합 관리' },
+        { title: '요청서 표준화', desc: '쇼룸·단독매장·화장품별 요청서 양식을 통일하고 캘린더로 일정 관리' },
+        { title: '로그 분석기 (LogWise)', desc: '키오스크 앱 로그를 규칙 기반으로 파싱해 결제·에러·미출력·소모품을 리포트' },
+        { title: 'AI 페어 코딩', desc: 'Claude로 구조 설계와 반복 개선을 진행해 개발 속도 향상' },
+      ],
+    },
+    {
+      n: '02', year: '2026',
       title: '루나운세', en: 'LunaFortune',
       kind: '1인 개발 · Mobile + Web',
       desc: 'AI 기반 타로 · 사주 · 점성술 종합 운세 앱. 기획부터 디자인, 개발, AdMob 위치 최적화, Google Play 비공개 테스트, 프로덕션 출시까지 1인으로 진행했습니다. Next.js + Supabase 웹 버전도 함께 운영합니다.',
@@ -276,22 +298,22 @@ function Work({ onOpen }) {
       featured: true,
     },
     {
-      n: '02', year: '2025—',
+      n: '03', year: '2025—',
       title: '키오스크 웹앱', en: 'Kiosk Web Apps',
       kind: '회사 · 영인터내셔널 (재직 중)',
       live: true,
-      desc: '키오스크 웹 애플리케이션 프론트엔드 유지보수 및 기능 개선을 담당하고 있습니다. 기존 코드 구조 분석을 바탕으로 안정성을 유지하며 사용자 흐름과 UI를 개선하고, 거래처 요청서·동영상 통합 관리 웹 시스템을 신규 구축했습니다.',
+      desc: '키오스크 웹 애플리케이션 프론트엔드 유지보수 및 기능 개선을 담당하고 있습니다. 기존 코드 구조 분석을 바탕으로 안정성을 유지하며 사용자 흐름과 UI를 개선하고, Payme 결제 오류·프린터 출력 상태 UI 등 실서비스 이슈를 대응합니다.',
       stack: ['React', 'TypeScript', 'Next.js', 'Node.js', 'Axios'],
       links: [],
       cover: 'kiosk',
       image: '/assets/img/키오스크.webp',
       gallery: ['/assets/img/키오스크.webp', '/assets/img/송출요청 프로그램.png'],
       highlights: [
-        '스티커메이커 · 폴라폴라 · 컬러네임스티커 · 카드메이커 · 스튜디오 5개 제품 유지보수',
+        '스티커메이커 · 폴라폴라 · 컬러네임스티커 · 카드메이커 · 스튜디오 5개 제품 유지보수 (신규 키오스크 제작 중)',
+        'Payme 결제 오류 수정 · 프린터 상태 기반 출력 진행률 UI 및 상태 처리 로직 개선',
+        '해외 고객사 요구사항 대응 및 UI/UX 개선 작업 수행',
         '기존 코드 구조 분석 후 안정성을 유지하며 신규 기능 추가 · 버그 수정',
-        '사용자 흐름 개선 · 인터페이스 수정 · 오류 수정 및 기능 안정성 향상',
         '다양한 디바이스·사용 환경을 고려한 UI 보완 및 반응형 처리',
-        '거래처 요청서·동영상 통합 관리 웹 시스템 신규 구축',
       ],
       troubleshooting: [
         {
@@ -303,7 +325,7 @@ function Work({ onOpen }) {
       ],
     },
     {
-      n: '03', year: '2025—',
+      n: '04', year: '2025—',
       title: 'ReceiptFlow', en: 'LedgerFlow ERP',
       kind: '개인 · AI 페어 코딩 · 진행 중',
       live: true,
@@ -321,7 +343,7 @@ function Work({ onOpen }) {
       ],
     },
     {
-      n: '04', year: '2025.05',
+      n: '05', year: '2025.05',
       title: '코코월드', en: 'cocoworld',
       kind: '팀 프로젝트 · 풀스택 · 2025.04.28 — 05.21',
       desc: '추억 속 미니홈피를 현대 기술로 재해석. 다이어리(react-calendar), 미니룸 커스터마이징(react-dnd), JWT 인증, 결제 연동, AWS EC2 배포까지 구현한 부트캠프 대상 수상작.',
@@ -367,7 +389,7 @@ function Work({ onOpen }) {
       ],
     },
     {
-      n: '05', year: '2025.04',
+      n: '06', year: '2025.04',
       title: '소개팅 앱', en: 'Pet Friends',
       kind: '팀 프로젝트 · 풀스택 · 기여도 80%',
       desc: 'GPS · AI 기반 반려동물 친구 매칭 서비스. 2025.03.31 — 04.25 협업, AWS 배포 완료.',
@@ -415,9 +437,13 @@ function Work({ onOpen }) {
 }
 
 function ProjectRow({ p, flip, onOpen }) {
+  const openFromCover = (e) => {
+    const cover = e.currentTarget.closest('article')?.querySelector('.proj-cover') || e.currentTarget;
+    onOpen(p, cover.getBoundingClientRect());
+  };
   return (
     <article className="reveal proj-card grid md:grid-cols-12 gap-8 md:gap-12 items-center">
-      <button type="button" onClick={() => onOpen(p)}
+      <button type="button" onClick={openFromCover}
          className={`proj-cover block md:col-span-7 aspect-[4/3] md:aspect-video rounded-sm bg-paper2 overflow-hidden text-left ${flip ? 'md:order-2' : ''}`}
          aria-label={`${p.title} 자세히 보기`}>
         <div className={`proj-cover-inner relative w-full h-full ${p.image ? '' : `cover-${p.cover}`}`}>
@@ -458,7 +484,7 @@ function ProjectRow({ p, flip, onOpen }) {
         </div>
 
         <div className="flex flex-wrap gap-6">
-          <button type="button" onClick={() => onOpen(p)}
+          <button type="button" onClick={openFromCover}
                   className="ulink ulink-hover inline-flex items-center gap-1.5 text-ink text-sm">
             자세히 보기 <Icon name="arrowRight" size={12} />
           </button>
@@ -491,6 +517,32 @@ function Cover({ name }) {
         <div className="absolute bottom-5 left-5 right-5 flex items-end justify-between">
           <div className="font-serif serif-italic text-paper text-2xl">Luna,</div>
           <div className="font-mono text-[10px] text-paper opacity-60 tracking-widest">FORTUNE.APP</div>
+        </div>
+      </div>
+    );
+  }
+  if (name === 'tools') {
+    return (
+      <div className="absolute inset-0 flex items-center justify-center">
+        <div className="relative w-40 md:w-52 bg-paper shadow-[0_2px_24px_rgba(0,0,0,0.06)] p-4">
+          <div className="flex items-center gap-1.5 mb-3">
+            <div className="w-1.5 h-1.5 rounded-full bg-accent"></div>
+            <div className="font-mono text-[8px] text-ink2 tracking-widest">INTERNAL · TOOLS</div>
+          </div>
+          <div className="space-y-1.5">
+            {[0,1,2,3].map((i) => (
+              <div key={i} className="flex items-center gap-2">
+                <div className="w-3 h-3 rounded-[2px] border border-line flex items-center justify-center">
+                  {i < 2 && <div className="w-1.5 h-1.5 bg-accent rounded-[1px]"></div>}
+                </div>
+                <div className="h-1 flex-1 bg-ink2 opacity-20 rounded"></div>
+              </div>
+            ))}
+          </div>
+        </div>
+        <div className="absolute bottom-5 left-5 right-5 flex items-end justify-between">
+          <div className="font-serif serif-italic text-ink text-2xl">Automate,</div>
+          <div className="font-mono text-[10px] text-mute tracking-widest">WORKFLOW</div>
         </div>
       </div>
     );
@@ -569,10 +621,12 @@ function Experience() {
       year: '2025—', period: '2025.11 — 재직 중',
       role: '프론트엔드 개발자', org: '㈜영인터내셔널',
       points: [
-        '키오스크 웹앱 유지보수 및 기능 개선',
-        '기존 코드 구조 분석을 바탕으로 사용자 흐름·UI 개선 및 기능 안정성 향상',
-        '거래처 요청서·동영상 통합 관리 웹 시스템 신규 구축',
-        '서비스: 스티커메이커 · 폴라폴라 · 컬러네임스티커 · 카드메이커 · 스튜디오',
+        '키오스크 기반 웹 애플리케이션 프론트엔드 유지보수 및 기능 개선',
+        'Payme 결제 오류 수정 · 프린터 상태 기반 출력 진행률 UI 및 상태 처리 로직 개선',
+        '해외 고객사 요구사항 대응 및 UI/UX 개선',
+        '엑셀로 관리하던 거래처 요청서·동영상 프로세스를 통합 웹 시스템으로 전환 (양식 표준화 · 캘린더 일정 관리)',
+        'Claude를 활용해 사내 업무를 간소화하는 내부 도구 개발',
+        '서비스: 스티커메이커 · 폴라폴라 · 컬러네임스티커 · 카드메이커 · 스튜디오 (신규 키오스크 제작 중)',
       ],
       live: true,
     },
@@ -799,7 +853,7 @@ function OtherWorks({ onOpen }) {
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-12">
             {items.map((it, i) => (
               <article key={i} className="reveal proj-card group" style={{ transitionDelay: `${(i % 3) * 0.06}s` }}>
-                <button type="button" onClick={() => onOpen(it)} className="block w-full text-left" aria-label={`${it.title} 자세히 보기`}>
+                <button type="button" onClick={(e) => onOpen(it, e.currentTarget.getBoundingClientRect())} className="block w-full text-left" aria-label={`${it.title} 자세히 보기`}>
                   <div className="aspect-[4/3] mb-4 bg-paper2 overflow-hidden rounded-sm proj-cover flex items-center justify-center">
                     <img src={it.image} alt={it.title} className="proj-cover-inner max-w-full max-h-full object-contain" loading="lazy" />
                   </div>
@@ -926,23 +980,44 @@ function Footer() {
 }
 
 // ─── Modal ───────────────────────────────────────────────────────────────────
-function ProjectModal({ project, onClose }) {
+function ProjectModal({ project, origin, onClose }) {
   const [displayed, setDisplayed] = useState(null);
+  const [displayedOrigin, setDisplayedOrigin] = useState(null);
   const [closing, setClosing] = useState(false);
 
   useEffect(() => {
     if (project) {
       setDisplayed(project);
+      setDisplayedOrigin(origin);
       setClosing(false);
     } else if (displayed) {
       setClosing(true);
       const t = setTimeout(() => {
         setDisplayed(null);
         setClosing(false);
-      }, 260);
+      }, 320);
       return () => clearTimeout(t);
     }
-  }, [project, displayed]);
+  }, [project, displayed, origin]);
+
+  const flipStyle = useMemo(() => {
+    if (!displayedOrigin) return {};
+    const vw = window.innerWidth;
+    const vh = window.innerHeight;
+    const cx = displayedOrigin.left + displayedOrigin.width / 2;
+    const cy = displayedOrigin.top + displayedOrigin.height / 2;
+    const dx = cx - vw / 2;
+    const dy = cy - vh / 2;
+    const modalW = vw >= 768 ? Math.min(1024, vw - 48) : vw;
+    const modalH = vw >= 768 ? Math.min(800, vh * 0.9) : vh;
+    const rawScale = Math.min(displayedOrigin.width / modalW, displayedOrigin.height / modalH);
+    const scale = Math.max(0.22, Math.min(0.9, rawScale));
+    return {
+      '--flip-x': `${dx}px`,
+      '--flip-y': `${dy}px`,
+      '--flip-scale': scale,
+    };
+  }, [displayedOrigin]);
 
   useEffect(() => {
     if (!displayed) return;
@@ -964,7 +1039,7 @@ function ProjectModal({ project, onClose }) {
   return (
     <div className="fixed inset-0 z-[100] flex items-center justify-center p-0 md:p-6" onClick={onClose} role="dialog" aria-modal="true">
       <div className={`absolute inset-0 bg-ink/60 ${closing ? 'modal-bg-out' : 'modal-bg-in'}`} style={{ backdropFilter: 'blur(4px)', WebkitBackdropFilter: 'blur(4px)' }}></div>
-      <div className={`relative w-full h-full md:h-auto md:max-h-[90vh] md:max-w-5xl bg-paper md:rounded-sm shadow-2xl flex flex-col ${closing ? 'modal-content-out' : 'modal-content-in'}`} onClick={(e) => e.stopPropagation()}>
+      <div className={`relative w-full h-full md:h-auto md:max-h-[90vh] md:max-w-5xl bg-paper md:rounded-sm shadow-2xl flex flex-col ${closing ? 'modal-content-out' : 'modal-content-in'}`} style={flipStyle} onClick={(e) => e.stopPropagation()}>
         {/* Header */}
         <div className="bg-paper border-b border-line px-6 md:px-10 py-5 flex items-start justify-between gap-6 shrink-0">
           <div className="min-w-0">
@@ -1094,19 +1169,24 @@ function ProjectModal({ project, onClose }) {
 function App() {
   useReveal();
   const [active, setActive] = useState(null);
+  const [origin, setOrigin] = useState(null);
+  const handleOpen = (project, rect) => {
+    setOrigin(rect || null);
+    setActive(project);
+  };
   return (
     <>
       <Nav />
       <Hero />
       <About />
       <Skills />
-      <Work onOpen={setActive} />
-      <OtherWorks onOpen={setActive} />
+      <Work onOpen={handleOpen} />
+      <OtherWorks onOpen={handleOpen} />
       <Experience />
       <Recognition />
       <Contact />
       <Footer />
-      <ProjectModal project={active} onClose={() => setActive(null)} />
+      <ProjectModal project={active} origin={origin} onClose={() => setActive(null)} />
     </>
   );
 }
