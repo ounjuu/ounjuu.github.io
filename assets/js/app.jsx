@@ -249,6 +249,8 @@ function Work({ onOpen }) {
       stack: ['React', 'TypeScript', 'Vite', 'Supabase', 'Claude'],
       links: [],
       cover: 'tools',
+      image: '/assets/img/groupware-room.webp',
+      gallery: ['/assets/img/groupware-room.webp', '/assets/img/groupware-door.webp'],
       highlights: [
         '엑셀로 관리하던 거래처 요청서·동영상 프로세스를 통합 웹 시스템으로 전환',
         '입력 양식 표준화 · 캘린더 기반 일정 관리 · 검토/승인 워크플로우 구현',
