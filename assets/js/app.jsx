@@ -249,8 +249,6 @@ function Work({ onOpen }) {
       stack: ['React', 'TypeScript', 'Vite', 'Supabase', 'Claude'],
       links: [],
       cover: 'tools',
-      image: '/assets/img/groupware-room.webp',
-      gallery: ['/assets/img/groupware-room.webp', '/assets/img/groupware-door.webp'],
       highlights: [
         '지출결의서 작성 · 세금계산서 발행 신청 · 회의실 예약을 아우르는 사내 그룹웨어',
         '지급요청서·개인지출결의서 전자결재 — 담당자·팀장·경영지원·대표 결재선 처리',
