@@ -126,7 +126,7 @@ function Hero() {
 
         <div className="reveal mt-24 pt-8 border-t border-line flex flex-col md:flex-row items-start md:items-end justify-between gap-6" style={{ transitionDelay: '0.7s' }}>
           <div className="flex items-baseline gap-12">
-            <Stat n="06" label="Selected Works" />
+            <Stat n="07" label="Selected Works" />
             <Stat n="01" label="App Released" />
             <Stat n="02" label="Awards" />
           </div>
@@ -245,29 +245,52 @@ function Work({ onOpen }) {
       title: '사내 업무 자동화 툴', en: 'Internal Tools',
       kind: '회사 · 영인터내셔널 · AI 페어 코딩',
       live: true,
-      desc: '반복되던 사내 사무 업무를 직접 만든 웹 도구로 줄였습니다. 엑셀로 관리하던 거래처 요청서·동영상 프로세스를 통합 웹 시스템으로 옮기고, 키오스크 앱 로그를 브라우저에서 바로 분석하는 도구를 만들었습니다. 지출결의서 작성·세금계산서 발행 신청·회의실 예약을 아우르는 사내 그룹웨어까지 완성해 사무 업무를 자동화했습니다. Claude를 페어로 활용해 설계와 구현 속도를 끌어올렸습니다.',
+      desc: '반복되던 사내 사무 업무를 직접 만든 웹 도구로 줄였습니다. 지출결의서 작성·세금계산서 발행 신청·회의실 예약을 아우르는 사내 그룹웨어를 만들고, 키오스크 앱 로그를 브라우저에서 바로 분석하는 도구도 함께 개발했습니다. Claude를 페어로 활용해 설계와 구현 속도를 끌어올렸습니다.',
       stack: ['React', 'TypeScript', 'Vite', 'Supabase', 'Claude'],
       links: [],
       cover: 'tools',
       image: '/assets/img/groupware-room.webp',
       gallery: ['/assets/img/groupware-room.webp', '/assets/img/groupware-door.webp'],
       highlights: [
-        '엑셀로 관리하던 거래처 요청서·동영상 프로세스를 통합 웹 시스템으로 전환',
-        '입력 양식 표준화 · 캘린더 기반 일정 관리 · 검토/승인 워크플로우 구현',
+        '지출결의서 작성 · 세금계산서 발행 신청 · 회의실 예약을 아우르는 사내 그룹웨어 구축',
+        '승인 완료 건을 국세청 일괄발행 · 경리나라 이체 엑셀로 자동 변환 (경영지원 자동화)',
+        '회의실 예약 + 문앞 태블릿 현황판(비어있음·사용중) 화면 제작',
         '키오스크 앱 로그(.log)를 규칙 기반으로 분석해 결제·에러·미출력을 브라우저에서 즉시 파악',
-        '사내 그룹웨어 구축 — 지출결의서 작성 · 세금계산서 발행 신청 · 회의실 예약 자동화',
         'Claude 페어 코딩으로 설계·개발을 반복하며 업무 처리 효율과 협업 편의성 향상',
       ],
       features: [
-        { title: 'DID 편성표 관리 (Daiso)', desc: '거래처 송출 요청 → 관리자 검토·승인 → 편성표 반영까지 웹에서 통합 관리' },
-        { title: '요청서 표준화', desc: '쇼룸·단독매장·화장품별 요청서 양식을 통일하고 캘린더로 일정 관리' },
+        { title: '전자결재 그룹웨어', desc: '지급요청서·개인지출결의서 작성 → 담당자·팀장·경영지원·대표 결재선 처리' },
+        { title: '회의실 예약', desc: '층별 회의실을 5분 단위로 예약, 문앞 태블릿에 실시간 현황(비어있음·사용중) 표시' },
+        { title: '세금계산서·이체 자동화', desc: '승인 건을 국세청 일괄발행·경리나라 이체용 엑셀로 자동 생성' },
         { title: '로그 분석기 (LogWise)', desc: '키오스크 앱 로그를 규칙 기반으로 파싱해 결제·에러·미출력·소모품을 리포트' },
-        { title: '사내 그룹웨어', desc: '지출결의서 작성 · 세금계산서 발행 신청 · 회의실 예약을 한 곳에서 처리' },
         { title: 'AI 페어 코딩', desc: 'Claude로 구조 설계와 반복 개선을 진행해 개발 속도 향상' },
       ],
     },
     {
-      n: '02', year: '2026',
+      n: '02', year: '2025—',
+      title: 'DID 편성표 관리', en: 'Daiso Signage Manager',
+      kind: '회사 · 영인터내셔널',
+      live: true,
+      desc: '다이소 매장 디지털 사이니지(DID)의 송출 콘텐츠와 편성표를 관리하는 웹 시스템입니다. 거래처가 송출 요청서를 제출하면 관리자가 검토해 완료/미승인 처리하고, 승인된 요청이 최종 편성표에 반영됩니다. 엑셀로 흩어져 관리되던 요청서·영상 프로세스를 하나의 웹으로 통합했습니다.',
+      stack: ['React', 'TypeScript', 'Supabase', 'Cloudflare R2', 'Netlify'],
+      links: [],
+      cover: 'did',
+      highlights: [
+        '다이소 매장 디지털 사이니지(DID) 송출 콘텐츠·편성표 통합 관리',
+        '거래처 송출 요청 → 관리자 검토·승인 → 편성표 반영 워크플로우 구현',
+        '엑셀로 관리하던 요청서·영상 데이터를 통합, 입력 양식 표준화·캘린더 일정 관리',
+        '영상 업로드: Supabase Edge Function presigned URL + Cloudflare R2 직접 업로드',
+        '오너·관리자·거래처 권한 분리, 리빙파워센터(LPC) 도메인 동시 운영',
+      ],
+      features: [
+        { title: '편성표 관리', desc: '교차표/목록 뷰 · 날짜 필터 · 엑셀 내보내기' },
+        { title: '송출 요청 워크플로우', desc: '거래처 요청 → 관리자 검토 → 완료/미승인 → 편성표 반영' },
+        { title: '영상 라이브러리', desc: 'R2 직접 업로드(presigned URL), 송출용/원본 구분 관리' },
+        { title: '권한 · 멀티도메인', desc: '오너/관리자/거래처 권한 분리, 다이소·LPC 도메인 자동 분리' },
+      ],
+    },
+    {
+      n: '03', year: '2026',
       title: '루나운세', en: 'LunaFortune',
       kind: '1인 개발 · Mobile + Web',
       desc: 'AI 기반 타로 · 사주 · 점성술 종합 운세 앱. 기획부터 디자인, 개발, AdMob 위치 최적화, Google Play 비공개 테스트, 프로덕션 출시까지 1인으로 진행했습니다. Next.js + Supabase 웹 버전도 함께 운영합니다.',
@@ -302,7 +325,7 @@ function Work({ onOpen }) {
       featured: true,
     },
     {
-      n: '03', year: '2025—',
+      n: '04', year: '2025—',
       title: '키오스크 웹앱', en: 'Kiosk Web Apps',
       kind: '회사 · 영인터내셔널 (재직 중)',
       live: true,
@@ -329,7 +352,7 @@ function Work({ onOpen }) {
       ],
     },
     {
-      n: '04', year: '2025—',
+      n: '05', year: '2025—',
       title: 'ReceiptFlow', en: 'LedgerFlow ERP',
       kind: '개인 · AI 페어 코딩 · 진행 중',
       live: true,
@@ -347,7 +370,7 @@ function Work({ onOpen }) {
       ],
     },
     {
-      n: '05', year: '2025.05',
+      n: '06', year: '2025.05',
       title: '코코월드', en: 'cocoworld',
       kind: '팀 프로젝트 · 풀스택 · 2025.04.28 — 05.21',
       desc: '추억 속 미니홈피를 현대 기술로 재해석. 다이어리(react-calendar), 미니룸 커스터마이징(react-dnd), JWT 인증, 결제 연동, AWS EC2 배포까지 구현한 부트캠프 대상 수상작.',
@@ -393,7 +416,7 @@ function Work({ onOpen }) {
       ],
     },
     {
-      n: '06', year: '2025.04',
+      n: '07', year: '2025.04',
       title: '소개팅 앱', en: 'Pet Friends',
       kind: '팀 프로젝트 · 풀스택 · 기여도 80%',
       desc: 'GPS · AI 기반 반려동물 친구 매칭 서비스. 2025.03.31 — 04.25 협업, AWS 배포 완료.',
@@ -547,6 +570,30 @@ function Cover({ name }) {
         <div className="absolute bottom-5 left-5 right-5 flex items-end justify-between">
           <div className="font-serif serif-italic text-ink text-2xl">Automate,</div>
           <div className="font-mono text-[10px] text-mute tracking-widest">WORKFLOW</div>
+        </div>
+      </div>
+    );
+  }
+  if (name === 'did') {
+    return (
+      <div className="absolute inset-0 flex items-center justify-center">
+        <div className="relative w-44 md:w-56">
+          <div className="bg-paper rounded-md shadow-[0_2px_24px_rgba(0,0,0,0.06)] p-3">
+            <div className="flex items-center gap-1.5 mb-2.5">
+              <div className="w-1.5 h-1.5 rounded-full bg-accent"></div>
+              <div className="font-mono text-[7px] text-ink2 tracking-widest">DID · SCHEDULE</div>
+            </div>
+            <div className="grid grid-cols-4 gap-1">
+              {[...Array(12)].map((_, i) => (
+                <div key={i} className={`h-3 rounded-[2px] ${[1,4,6,9,11].includes(i) ? 'bg-accent' : 'bg-ink2 opacity-15'}`}></div>
+              ))}
+            </div>
+          </div>
+          <div className="mx-auto mt-1.5 w-10 h-1 rounded-full bg-ink2 opacity-25"></div>
+        </div>
+        <div className="absolute bottom-5 left-5 right-5 flex items-end justify-between">
+          <div className="font-serif serif-italic text-ink text-2xl">Signage,</div>
+          <div className="font-mono text-[10px] text-mute tracking-widest">DAISO · DID</div>
         </div>
       </div>
     );
