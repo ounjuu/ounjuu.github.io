@@ -34,6 +34,7 @@ const Icon = ({ name, size = 16, className = '' }) => {
     plus: <><path d="M12 5v14M5 12h14"/></>,
     minus: <><path d="M5 12h14"/></>,
     googlePlay: <><path d="M3.5 3.2l13 8.8-13 8.8z"/><path d="M3.5 3.2l8.7 8.8-8.7 8.8"/><path d="M12.2 12l4.3 0"/></>,
+    appStore: <><path d="M16.2 12.4c0-2.2 1.8-3.3 1.9-3.3-1-1.5-2.6-1.7-3.2-1.7-1.4-.1-2.7.8-3.3.8-.7 0-1.7-.8-2.8-.8-1.5 0-2.8.8-3.6 2.1-1.5 2.6-.4 6.5 1.1 8.7.7 1 1.6 2.2 2.7 2.2 1.1 0 1.5-.7 2.8-.7s1.6.7 2.8.7c1.1 0 1.9-1.1 2.6-2.1.8-1.2 1.2-2.4 1.2-2.5 0 0-2.2-.9-2.2-3.4z"/><path d="M14.3 5.8c.6-.7 1-1.7.9-2.8-.9 0-2 .6-2.6 1.4-.6.6-1.1 1.7-.9 2.7 1 .1 2-.6 2.6-1.3z"/></>,
   };
   return (
     <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className={className}>
@@ -126,8 +127,8 @@ function Hero() {
 
         <div className="reveal mt-24 pt-8 border-t border-line flex flex-col md:flex-row items-start md:items-end justify-between gap-6" style={{ transitionDelay: '0.7s' }}>
           <div className="flex items-baseline gap-12">
-            <Stat n="08" label="Selected Works" />
-            <Stat n="01" label="App Released" />
+            <Stat n="09" label="Selected Works" />
+            <Stat n="02" label="App Released" />
             <Stat n="02" label="Awards" />
           </div>
           <a href="#about" className="flex items-center gap-3 text-sm text-ink2 hover:text-ink transition-colors group">
@@ -198,7 +199,7 @@ function Meta({ label, value, sub }) {
 // ─── Skills ──────────────────────────────────────────────────────────────────
 function Skills() {
   const groups = [
-    { label: 'Frontend', items: ['React', 'Next.js', 'TypeScript', 'JavaScript', 'Vue.js', 'React Native', 'HTML5 & CSS3', 'Tailwind', 'antd', 'Bootstrap'] },
+    { label: 'Frontend', items: ['React', 'Next.js', 'TypeScript', 'JavaScript', 'Vue.js', 'React Native', 'Expo', 'HTML5 & CSS3', 'Tailwind', 'antd', 'Bootstrap'] },
     { label: 'State & Data', items: ['Redux', 'Zustand', 'React Query', 'Context API', 'REST API'] },
     { label: 'Backend & Infra', items: ['Node.js', 'Nest.js', 'MySQL', 'AWS EC2', 'Supabase'] },
     { label: 'Tools & AI', items: ['Git & GitHub', 'Claude Code', 'Codex', 'Figma', 'Notion', 'Slack'] },
@@ -241,7 +242,42 @@ function Skills() {
 function Work({ onOpen }) {
   const projects = [
     {
-      n: '01', year: '2025—',
+      n: '01', year: '2026.09',
+      title: '오늘제주바당', en: 'Today Jeju Badang',
+      kind: '팀 · 2인 프론트엔드 · 한국관광공사 공모전',
+      live: true,
+      desc: '제주 바다를 안전하게 즐기도록 돕는 모바일 앱입니다. 기준 위치의 날씨·물때·파도·수온을 한 화면에 모아 오늘 바다에 들어가도 되는지 알려주고, 주변 스팟의 안전 등급·야간 경고, 비 오는 날 실내 코스, 방문 후기·현장 신고까지 하나로 연결했습니다. 한국관광공사 TourAPI 공모전 출품작으로, iOS App Store에 출시해 운영 중입니다.',
+      stack: ['React Native', 'Expo SDK 55', 'NativeWind', 'React Query', 'Zustand', 'i18next'],
+      links: [
+        { label: 'App Store', href: 'https://apps.apple.com/kr/app/id6807401482', icon: 'appStore' },
+      ],
+      cover: 'badang',
+      image: '/assets/img/Badang.webp',
+      gallery: [
+        '/assets/img/Badang.webp', '/assets/img/Badang1.webp',
+        '/assets/img/Badang2.webp', '/assets/img/Badang3.webp',
+        '/assets/img/Badang_icon.webp',
+      ],
+      highlights: [
+        '제주 바다의 안전 정보(물때·파도·수온·야간 경고)를 한 화면에 모은 여행 앱 — 프론트엔드 2인 협업',
+        '한국관광공사 TourAPI 공모전 출품작 · iOS App Store 출시(1.0.1 판매중), Android 비공개 테스트 진행 중',
+        '한국관광공사 TourAPI · 국립해양조사원 해양 데이터 연동, 백엔드(NestJS · Supabase)와 API 연동',
+        '한국어·영어·일본어·중국어 4개 언어 지원 — 기기 언어를 자동으로 따라감',
+        '해파리·이안류·오염·혼잡·폐장 푸시 알림 + 인앱 알림함, KST 기준 방해금지 시간 적용',
+        'GPS 미수집 등 개인정보 최소 수집 원칙으로 설계 — 단순 관광정보가 아닌 안전 최우선 컨셉',
+        'EAS Build + EAS Update(OTA)로 배포·운영, expo-router 타입드 라우트 · 디자인 토큰 기반 구조',
+      ],
+      features: [
+        { title: '오늘의 바당 홈', desc: '기준 위치의 날씨·물때·파도·수온과 추천 활동을 대시보드로 요약, 밤에는 달 아이콘·다크 카드로 전환' },
+        { title: '주변 스팟 · 해양 안전 정보', desc: '스팟별 안전 등급·물때·시야·야간 경고 제공, iOS는 애플맵 · Android는 구글맵 연동' },
+        { title: '비 오는 날 실내 코스', desc: '날씨에 따라 오전·점심·오후 코스를 추천하고 지역 소상공인과 연계' },
+        { title: '방문 후기 · 현장 신고', desc: '사진 후기와 시야 신고, 부적절 콘텐츠 신고(UGC) 처리까지 지원' },
+        { title: '해양 안전 경보 알림', desc: '해파리·이안류·오염·혼잡·폐장 푸시와 인앱 알림함, 방해금지 시간(KST) 설정' },
+        { title: '게스트 모드 · 소셜 로그인', desc: '로그인 없이 열람 가능, 카카오·구글·애플 로그인 지원' },
+      ],
+    },
+    {
+      n: '02', year: '2025—',
       title: '사내 그룹웨어', en: 'Groupware',
       kind: '회사 · 영인터내셔널 · AI 페어 코딩',
       live: true,
@@ -264,7 +300,7 @@ function Work({ onOpen }) {
       ],
     },
     {
-      n: '02', year: '2025—',
+      n: '03', year: '2025—',
       title: 'DID 편성표 관리', en: 'Daiso Signage Manager',
       kind: '회사 · 영인터내셔널',
       live: true,
@@ -287,7 +323,7 @@ function Work({ onOpen }) {
       ],
     },
     {
-      n: '03', year: '2025—',
+      n: '04', year: '2025—',
       title: '로그 분석기', en: 'LogWise',
       kind: '회사 · 영인터내셔널 · AI 페어 코딩',
       live: true,
@@ -310,7 +346,7 @@ function Work({ onOpen }) {
       ],
     },
     {
-      n: '04', year: '2026',
+      n: '05', year: '2026',
       title: '루나운세', en: 'LunaFortune',
       kind: '1인 개발 · Mobile + Web',
       desc: 'AI 기반 타로 · 사주 · 점성술 종합 운세 앱. 기획부터 디자인, 개발, AdMob 위치 최적화, Google Play 비공개 테스트, 프로덕션 출시까지 1인으로 진행했습니다. Next.js + Supabase 웹 버전도 함께 운영합니다.',
@@ -345,7 +381,7 @@ function Work({ onOpen }) {
       featured: true,
     },
     {
-      n: '05', year: '2025—',
+      n: '06', year: '2025—',
       title: '키오스크 웹앱', en: 'Kiosk Web Apps',
       kind: '회사 · 영인터내셔널 (재직 중)',
       live: true,
@@ -372,7 +408,7 @@ function Work({ onOpen }) {
       ],
     },
     {
-      n: '06', year: '2025—',
+      n: '07', year: '2025—',
       title: 'ReceiptFlow', en: 'LedgerFlow ERP',
       kind: '개인 · AI 페어 코딩 · 진행 중',
       live: true,
@@ -390,7 +426,7 @@ function Work({ onOpen }) {
       ],
     },
     {
-      n: '07', year: '2025.05',
+      n: '08', year: '2025.05',
       title: '코코월드', en: 'cocoworld',
       kind: '팀 프로젝트 · 풀스택 · 2025.04.28 — 05.21',
       desc: '추억 속 미니홈피를 현대 기술로 재해석. 다이어리(react-calendar), 미니룸 커스터마이징(react-dnd), JWT 인증, 결제 연동, AWS EC2 배포까지 구현한 부트캠프 대상 수상작.',
@@ -436,7 +472,7 @@ function Work({ onOpen }) {
       ],
     },
     {
-      n: '08', year: '2025.04',
+      n: '09', year: '2025.04',
       title: '소개팅 앱', en: 'Pet Friends',
       kind: '팀 프로젝트 · 풀스택 · 기여도 80%',
       desc: 'GPS · AI 기반 반려동물 친구 매칭 서비스. 2025.03.31 — 04.25 협업, AWS 배포 완료.',
